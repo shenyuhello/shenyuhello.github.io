@@ -90,7 +90,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/10/13/problem-about-grip-ball/index.html">
 <meta property="og:site_name" content="宁静以致远">
 <meta property="og:description" content="问题描述有一个箱子里装有n个白球，m个黑球。现按照如下规则去抓球，若抓到一个白球，则将其涂黑后再放入箱子，若抓到一个黑球，则直接将其放入箱子，一直抓下去直到箱子里所有的白球都变为黑球为止，问平均情况下需要抓多少次才能使箱子里所有的球都变为黑球？">
-<meta property="og:updated_time" content="2016-10-13T09:52:19.403Z">
+<meta property="og:updated_time" content="2016-10-13T10:30:06.318Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="抓球问题">
 <meta name="twitter:description" content="问题描述有一个箱子里装有n个白球，m个黑球。现按照如下规则去抓球，若抓到一个白球，则将其涂黑后再放入箱子，若抓到一个黑球，则直接将其放入箱子，一直抓下去直到箱子里所有的白球都变为黑球为止，问平均情况下需要抓多少次才能使箱子里所有的球都变为黑球？">
@@ -313,7 +313,7 @@
         <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>有一个箱子里装有n个白球，m个黑球。现按照如下规则去抓球，若抓到一个白球，则将其涂黑后再放入箱子，若抓到一个黑球，则直接将其放入箱子，一直抓下去直到箱子里所有的白球都变为黑球为止，问平均情况下需要抓多少次才能使箱子里所有的球都变为黑球？</p>
 <a id="more"></a>
 <h2 id="基本思路"><a href="#基本思路" class="headerlink" title="基本思路"></a>基本思路</h2><p>该问题实际上就是一个求数学期望的问题，次数可能为从0到无穷大，直接计算每个次数相应的概率比较复杂，我们可以这样来想，先计算把第一个白球变成黑球用了多少次，再计算把第二个白球变成黑球用了多少次，依次下去直到所有的白球都变为黑球，最后把所有的次数加起来就等于问题的答案.</p>
-<h2 id="详细过程"><a href="#详细过程" class="headerlink" title="详细过程"></a>详细过程</h2><p>设$X$为把所有箱子所有的球都变为黑球时所需要抓球的次数，$Xi$为把第i个白球变为黑球所需要抓球的次数，则</p>
+<h2 id="详细过程"><a href="#详细过程" class="headerlink" title="详细过程"></a>详细过程</h2><p>设$X$为把箱子里所有的球都变为黑球时所需要抓球的次数，$Xi$为把第i个白球变为黑球所需要抓球的次数，则</p>
 <p>$$<br>\begin{align}<br>E(X)&amp;=E(\sum_1^nX_i)\\<br>&amp;=\sum_1^nE(X_i)<br>\end{align}<br>$$</p>
 <p>现在我们来计算$E(X_i)$.<br>此时，箱子中有$n-i+1$个白球，$m+i-1$个黑球，则</p>
 <p>$$<br>\begin{align}<br>P(X_i=1)&amp;=\frac {n-i+1}{m+n}\\<br>P(X_i=2)&amp;=\frac {m+i-1}{m+n}\times\frac {n-i+1}{m+n}\\<br>…\\<br>P(X_i=k)&amp;=(\frac{m+i-1}{m+n})^{k-1}\times\frac {n-i+1}{m+n}\\<br>\end{align}<br>$$</p>
