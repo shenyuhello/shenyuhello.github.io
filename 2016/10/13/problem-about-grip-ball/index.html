@@ -90,7 +90,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/10/13/problem-about-grip-ball/index.html">
 <meta property="og:site_name" content="宁静以致远">
 <meta property="og:description" content="问题描述有一个箱子里装有n个白球，m个黑球。现按照如下规则去抓球，若抓到一个白球，则将其涂黑后再放入箱子，若抓到一个黑球，则直接将其放入箱子，一直抓下去直到箱子里所有的白球都变为黑球为止，问平均情况下需要抓多少次才能使箱子里所有的球都变为黑球？">
-<meta property="og:updated_time" content="2016-10-13T10:30:06.318Z">
+<meta property="og:updated_time" content="2016-10-13T10:57:27.115Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="抓球问题">
 <meta name="twitter:description" content="问题描述有一个箱子里装有n个白球，m个黑球。现按照如下规则去抓球，若抓到一个白球，则将其涂黑后再放入箱子，若抓到一个黑球，则直接将其放入箱子，一直抓下去直到箱子里所有的白球都变为黑球为止，问平均情况下需要抓多少次才能使箱子里所有的球都变为黑球？">
@@ -333,7 +333,7 @@
 <p>现在来求总的期望</p>
 <p>$$<br>\begin{align}<br>E(X)&amp;=\sum_1^nE(X_i)\\<br>&amp;=\sum_1^n\frac{q_i}{(p_i-1)^2}\\<br>&amp;=\sum_1^n\frac{m+n}{n-i+1}\\<br>&amp;=(m+n)\sum_1^n\frac{1}{n-i+1}\\<br>&amp;=(m+n)\sum_1^{n}\frac{1}{n}<br>\end{align}<br>$$</p>
 <p>于是经过$(m+n)\sum_1^{n}\frac{1}{n}$次抓取之后可把全部白球变为黑球.</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>上述问题可以把它看成一个问题模型，从而应用到多种具体的情况。如在某种hash算法的实现中，将某一新项存入hash表时，随机选择hash表中的某一项，若该项为空则插入新的项，若不为空，则再随机选择下一项，直到找到一个空项插入为止，问该hash算法中，平均情况下需选择多少次才可以将hash表填满？这个问题就可直接运用的抓球问题模型进行求解.</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>上述问题可以把它看成一个问题模型，从而应用到多种具体的情况。如在某种hash算法的实现中，将某一新项存入hash表时，随机选择hash表中的某一项，若该项为空则插入新的项，若不为空，则再随机选择下一项，直到找到一个空项插入为止，问该hash算法中，平均情况下需选择多少次才可以将hash表填满？这个问题就可直接运用的抓球问题模型进行求解.又比如我经常用默默背单词，我选了一本3000单词量的书，我每天都会随机从这3000个单词里面随机选择50个来背，我想知道，我大概需要被多少天才能把这3000个单词背完.<br>这个问题经过小小的转化后同样可以抓球问题模型来解决。</p>
 
       
     </div>
