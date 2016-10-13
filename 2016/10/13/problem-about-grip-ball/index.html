@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="概率,hash," />
 
 
 
@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="sgdgasdagasfdgsadf">
+<meta name="description" content="问题描述有一个箱子里装有n个白球，m个黑球。现按照如下规则去抓球，若抓到一个白球，则将其涂黑后再放入箱子，若抓到一个黑球，则直接将其放入箱子，一直抓下去直到箱子里所有的白球都变为黑球为止，问平均情况下需要抓多少次才能使箱子里所有的球都变为黑球？">
 <meta property="og:type" content="article">
-<meta property="og:title" content="text">
-<meta property="og:url" content="http://yoursite.com/2016/10/13/text/index.html">
+<meta property="og:title" content="抓球问题">
+<meta property="og:url" content="http://yoursite.com/2016/10/13/problem-about-grip-ball/index.html">
 <meta property="og:site_name" content="宁静以致远">
-<meta property="og:description" content="sgdgasdagasfdgsadf">
-<meta property="og:updated_time" content="2016-10-13T03:27:01.242Z">
+<meta property="og:description" content="问题描述有一个箱子里装有n个白球，m个黑球。现按照如下规则去抓球，若抓到一个白球，则将其涂黑后再放入箱子，若抓到一个黑球，则直接将其放入箱子，一直抓下去直到箱子里所有的白球都变为黑球为止，问平均情况下需要抓多少次才能使箱子里所有的球都变为黑球？">
+<meta property="og:updated_time" content="2016-10-13T09:52:19.403Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="text">
-<meta name="twitter:description" content="sgdgasdagasfdgsadf">
+<meta name="twitter:title" content="抓球问题">
+<meta name="twitter:description" content="问题描述有一个箱子里装有n个白球，m个黑球。现按照如下规则去抓球，若抓到一个白球，则将其涂黑后再放入箱子，若抓到一个黑球，则直接将其放入箱子，一直抓下去直到箱子里所有的白球都变为黑球为止，问平均情况下需要抓多少次才能使箱子里所有的球都变为黑球？">
 
 
 
@@ -111,7 +111,7 @@
   };
 </script>
 
-  <title> text | 宁静以致远 </title>
+  <title> 抓球问题 | 宁静以致远 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -251,7 +251,7 @@
             
             
               
-                text
+                抓球问题
               
             
           </h1>
@@ -263,11 +263,30 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-13T11:27:00+08:00" content="2016-10-13">
+            <time itemprop="dateCreated" datetime="2016-10-13T12:56:25+08:00" content="2016-10-13">
               2016-10-13
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/数学/" itemprop="url" rel="index">
+                    <span itemprop="name">数学</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
@@ -291,7 +310,30 @@
       
 
       
-        <p>sgdgasdagasfdgsadf</p>
+        <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>有一个箱子里装有n个白球，m个黑球。现按照如下规则去抓球，若抓到一个白球，则将其涂黑后再放入箱子，若抓到一个黑球，则直接将其放入箱子，一直抓下去直到箱子里所有的白球都变为黑球为止，问平均情况下需要抓多少次才能使箱子里所有的球都变为黑球？</p>
+<a id="more"></a>
+<h2 id="基本思路"><a href="#基本思路" class="headerlink" title="基本思路"></a>基本思路</h2><p>该问题实际上就是一个求数学期望的问题，次数可能为从0到无穷大，直接计算每个次数相应的概率比较复杂，我们可以这样来想，先计算把第一个白球变成黑球用了多少次，再计算把第二个白球变成黑球用了多少次，依次下去直到所有的白球都变为黑球，最后把所有的次数加起来就等于问题的答案.</p>
+<h2 id="详细过程"><a href="#详细过程" class="headerlink" title="详细过程"></a>详细过程</h2><p>设$X$为把所有箱子所有的球都变为黑球时所需要抓球的次数，$Xi$为把第i个白球变为黑球所需要抓球的次数，则</p>
+<p>$$<br>\begin{align}<br>E(X)&amp;=E(\sum_1^nX_i)\\<br>&amp;=\sum_1^nE(X_i)<br>\end{align}<br>$$</p>
+<p>现在我们来计算$E(X_i)$.<br>此时，箱子中有$n-i+1$个白球，$m+i-1$个黑球，则</p>
+<p>$$<br>\begin{align}<br>P(X_i=1)&amp;=\frac {n-i+1}{m+n}\\<br>P(X_i=2)&amp;=\frac {m+i-1}{m+n}\times\frac {n-i+1}{m+n}\\<br>…\\<br>P(X_i=k)&amp;=(\frac{m+i-1}{m+n})^{k-1}\times\frac {n-i+1}{m+n}\\<br>\end{align}<br>$$</p>
+<p>按照期望定义可得</p>
+<p>$$<br>\begin{align}<br>E(X_i)&amp;=\sum_1^\infty k \times  P(X_i=k)\\<br>&amp;=\frac {n-i+1}{m+n}\sum_1^\infty k (\frac{m+i-1}{m+n})^{k-1}<br>\end{align}<br>$$</p>
+<p>可以看出$\sum_1^\infty k \times (\frac{m+i-1}{m+n})^{k-1}$是一个等差与等比相乘的求和，可使用高中学的错位相减法计算后，再求极限.这里使用高等数学求幂级数的方法来求，先求幂级数$\sum_1^\infty kx^{k-1}$的收敛域.</p>
+<p>$$<br>\lim_{k \to \infty}|\frac {k+1}{k}|=1<br>$$</p>
+<p>得其收敛半径为$R=1$，由于$(\frac {m-i+1}{m+n})^{k-1}&lt;1$，所以上述级数必收敛.</p>
+<p>设和函数为$s(x)$,即</p>
+<p>$$<br>\begin{align}<br>s(x)&amp;=\sum_1^\infty k x^{k-1}\\<br>&amp;=\sum_1^\infty (x^k)’\\<br>\end{align}<br>$$</p>
+<p>运用逐项求积公式得</p>
+<p>$$<br>\begin{align}<br>\int_0^x s(t)~dt&amp;=\int_0^x[ \sum_1^\infty (t^k)’]~dt\\<br>&amp;=\sum_1^\infty\int_0^x(t^k)’~dt \\<br>&amp;=\sum_1^\infty x^k \\<br>&amp;=\frac {x}{1-x}<br>\end{align}<br>$$</p>
+<p>上式两边求导得</p>
+<p>$$<br>\begin{align}<br>s(x)&amp;=(\frac{x}{1-x})’\\<br>&amp;=\frac{1}{(x-1)^2}<br>\end{align}<br>$$</p>
+<p>为了使公式看起来更简便，令$p_i=\frac{m+i-1}{m+n}$，$q_i=\frac {n-i+1}{m+n}$，得</p>
+<p>$$<br>\begin{align}<br>E(X_i)&amp;=\frac {n-i+1}{m+n}\sum_1^\infty k  (\frac{m+i-1}{m+n})^{k-1} \\<br>&amp;=q_i\sum_1^\infty kp_i^{k-1} \\<br>&amp;=\frac{q_i}{(p_i-1)^2}\\<br>\end{align}<br>$$</p>
+<p>现在来求总的期望</p>
+<p>$$<br>\begin{align}<br>E(X)&amp;=\sum_1^nE(X_i)\\<br>&amp;=\sum_1^n\frac{q_i}{(p_i-1)^2}\\<br>&amp;=\sum_1^n\frac{m+n}{n-i+1}\\<br>&amp;=(m+n)\sum_1^n\frac{1}{n-i+1}\\<br>&amp;=(m+n)\sum_1^{n}\frac{1}{n}<br>\end{align}<br>$$</p>
+<p>于是经过$(m+n)\sum_1^{n}\frac{1}{n}$次抓取之后可把全部白球变为黑球.</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>上述问题可以把它看成一个问题模型，从而应用到多种具体的情况。如在某种hash算法的实现中，将某一新项存入hash表时，随机选择hash表中的某一项，若该项为空则插入新的项，若不为空，则再随机选择下一项，直到找到一个空项插入为止，问该hash算法中，平均情况下需选择多少次才可以将hash表填满？这个问题就可直接运用的抓球问题模型进行求解.</p>
 
       
     </div>
@@ -311,21 +353,15 @@
 
     <footer class="post-footer">
       
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2016/10/11/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
-              </a>
-            
-          </div>
-
-          <div class="post-nav-prev post-nav-item">
-            
-          </div>
+        <div class="post-tags">
+          
+            <a href="/tags/概率/" rel="tag">#概率</a>
+          
+            <a href="/tags/hash/" rel="tag">#hash</a>
+          
         </div>
+      
+
       
 
       
@@ -390,13 +426,27 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">1</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -422,7 +472,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题描述"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本思路"><span class="nav-number">2.</span> <span class="nav-text">基本思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#详细过程"><span class="nav-number">3.</span> <span class="nav-text">详细过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
           </div>
         </section>
