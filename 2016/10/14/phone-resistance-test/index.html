@@ -90,7 +90,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/10/14/phone-resistance-test/index.html">
 <meta property="og:site_name" content="宁静以致远">
 <meta property="og:description" content="问题描述某公司生产了一种手机，为了测试手机耐摔性，需要在一栋有100层的大楼上做测试，若将手机从$x-1$层楼摔下没有损坏了，而从$x$层楼摔下损坏了，则称该手机的耐摔性能为$x$。共有两部手机用于测试，若手机从某一楼摔下之后没有损坏，则该手机还可用于下一次测试，若摔坏了，则不能用于下一次测试，问最少需要摔多次才能保证测出手机的耐摔性？">
-<meta property="og:updated_time" content="2016-10-14T14:50:59.795Z">
+<meta property="og:updated_time" content="2016-10-17T10:44:31.021Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="手机耐摔测试">
 <meta name="twitter:description" content="问题描述某公司生产了一种手机，为了测试手机耐摔性，需要在一栋有100层的大楼上做测试，若将手机从$x-1$层楼摔下没有损坏了，而从$x$层楼摔下损坏了，则称该手机的耐摔性能为$x$。共有两部手机用于测试，若手机从某一楼摔下之后没有损坏，则该手机还可用于下一次测试，若摔坏了，则不能用于下一次测试，问最少需要摔多次才能保证测出手机的耐摔性？">
@@ -312,8 +312,6 @@
       
         <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>某公司生产了一种手机，为了测试手机耐摔性，需要在一栋有100层的大楼上做测试，若将手机从$x-1$层楼摔下没有损坏了，而从$x$层楼摔下损坏了，则称该手机的耐摔性能为$x$。共有两部手机用于测试，若手机从某一楼摔下之后没有损坏，则该手机还可用于下一次测试，若摔坏了，则不能用于下一次测试，问最少需要摔多次才能保证测出手机的耐摔性？</p>
 <a id="more"></a>
-<p><em>如果你已经知道本题的答案，并且理解它，那就没必要看下去了.</em></p>
-<hr>
 <h2 id="基本思路"><a href="#基本思路" class="headerlink" title="基本思路"></a>基本思路</h2><p>大多数人都会想到使用二分法来解决这个问题，使用二分法在手机本身耐摔性较大或较小的时候能够很快找到答案，而在手机本身的耐摔性接近一半的时候，效果很差，最差的情况是当手机的耐摔性刚好是50的时候，所以至少需要50次测试才能保证得到结果。直接解决这道问题是比较复杂的，我们转而去思考另一个问题，如果我有$n$次摔的机会，那么我最多可以测试多少楼？</p>
 <h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>设利用$n$次测试可测试的最大楼层数为$f(n)$，也就是说在总的楼层数大于$f(n)$层的情况下，只有$n$次测试是没办法保证可以测出手机的耐摔性的，接下来就是如何求$f(n)$。</p>
 <p>假设我们第一次选中测试的楼层的楼层为第$k$层，则$k\le n$（如果$k  \gt n$是不能保证能测出手机耐摔性的）。第一次测试的结果又两种可能，如果手机摔坏了，就用另一部手机从第一层开始测试，最多测到第$k-1$层就得到答案了，所用次数不会超过n次，如果手机没有摔坏，那么耐摔性必定大于$k$,接下来就在$k$层以上继续测试，那么求$f(n)$的问题就转化为求$f(n-1)$，经过以上分析可得</p>
@@ -364,6 +362,10 @@
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/10/15/problem-about-memorize-words/" rel="prev" title="problem_about_memorize_words">
+                problem_about_memorize_words <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -431,7 +433,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
