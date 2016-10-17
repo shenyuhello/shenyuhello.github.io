@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="概率," />
+  <meta name="keywords" content="数学,概率," />
 
 
 
@@ -90,7 +90,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/10/15/problem-about-memorize-words/index.html">
 <meta property="og:site_name" content="宁静以致远">
 <meta property="og:description" content="问题描述有一本英语单词书共包含3000个单词，每天随机从中选择50个不重复的单词来背（可能包含已经背过的单词），问按照这种背法平均情况下需要多少天才能把3000个单词全部背完？">
-<meta property="og:updated_time" content="2016-10-17T14:35:42.773Z">
+<meta property="og:updated_time" content="2016-10-17T15:16:42.117Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="背单词问题">
 <meta name="twitter:description" content="问题描述有一本英语单词书共包含3000个单词，每天随机从中选择50个不重复的单词来背（可能包含已经背过的单词），问按照这种背法平均情况下需要多少天才能把3000个单词全部背完？">
@@ -284,6 +284,18 @@
 
                 
                 
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/数学/概率/" itemprop="url" rel="index">
+                    <span itemprop="name">概率</span>
+                  </a>
+                </span>
+
+                
+                
 
               
             </span>
@@ -356,7 +368,7 @@ $$
 <p>为了进一步判断我们的推理是否正确，我们来做一下仿真实验，也就是利用计算机来模拟一下背单词的过程，看看与我们的计算结果相差多远，仿真的代码如下。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># coding=utf-8</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">import</span> random</div><div class="line"></div><div class="line">s = <span class="number">3000</span>  <span class="comment"># 总单词数</span></div><div class="line">k = <span class="number">50</span>  <span class="comment"># 每天抽取的单词数</span></div><div class="line">random_num = range(<span class="number">0</span>, s)  <span class="comment"># 从中随机抽取单词</span></div><div class="line">times = <span class="number">100000</span>  <span class="comment"># 实验模拟次数</span></div><div class="line">acc_X = <span class="number">0</span>  <span class="comment"># 总共背单词的天数</span></div><div class="line">count_times = times  <span class="comment"># 还未完成的实验次数</span></div><div class="line"></div><div class="line"><span class="keyword">while</span> count_times &gt; <span class="number">0</span>:</div><div class="line">    word = [<span class="keyword">False</span>] * s  <span class="comment"># s个没有背过的单词</span></div><div class="line">    memory_word_count = <span class="number">0</span>  <span class="comment"># 背过的单词个数</span></div><div class="line">    X = <span class="number">0</span>  <span class="comment"># 天数</span></div><div class="line">    <span class="keyword">while</span> memory_word_count &lt; s:</div><div class="line">        memory_word_num = random.sample(random_num, k)</div><div class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> memory_word_num:</div><div class="line">            <span class="keyword">if</span> <span class="keyword">not</span> word[i]:</div><div class="line">                memory_word_count += <span class="number">1</span></div><div class="line">                word[i] = <span class="keyword">True</span></div><div class="line">        X += <span class="number">1</span></div><div class="line">    <span class="keyword">print</span> X</div><div class="line">    acc_X += X</div><div class="line">    count_times -= <span class="number">1</span></div><div class="line"></div><div class="line"><span class="keyword">print</span> acc_X * <span class="number">1.0</span> / times</div></pre></td></tr></table></figure>
 <p>上述代码在我的计算机上，某次的输出结果为511.74665，可以看出实验的结果和我们计算的结果是很接近的。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这个问题是我在写“<a href="/2016/10/13/problem-about-grip-ball/">抓球问题</a>”的一个扩展问题，最开始我也以为可以很简单的用抓球模型来解决，在进行深入思考之后，发现这个问题却并非如此容易，关键在于每天所抽取50个单词是不会重复的，这就大大增加了复杂性。我们在解决问题的时候是将原问题分解为多个小的子问题，然后将子问题的解合并得到原问题的解，类似于算法里面的“分治算法”的思想。上面的过程只得到了一个递推式，并没有得到一个封闭的解，如果你有一个封闭解或者对上面的推理过程有其他任何的想法，欢迎发送邮件到我的邮箱<a href="&#109;&#x61;&#x69;&#x6c;&#116;&#x6f;&#x3a;&#115;&#x68;&#101;&#x6e;&#x79;&#x75;&#104;&#101;&#x6c;&#x6c;&#111;&#x40;&#49;&#x36;&#x33;&#x2e;&#99;&#111;&#109;">&#115;&#x68;&#101;&#x6e;&#x79;&#x75;&#104;&#101;&#x6c;&#x6c;&#111;&#x40;&#49;&#x36;&#x33;&#x2e;&#99;&#111;&#109;</a>讨论。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这个问题是我在写“<a href="/2016/10/13/problem-about-grip-ball/">抓球问题</a>”的一个扩展问题，最开始我也以为可以很简单的用抓球模型来解决，在进行深入思考之后，发现这个问题却并非如此容易，关键在于每天所抽取50个单词是不会重复的，这就大大增加了复杂性。我们在解决问题的时候是将原问题分解为多个小的子问题，然后将子问题的解合并得到原问题的解，类似于算法里面的“分治算法”的思想。上面的过程只得到了一个递推式，并没有得到一个封闭的解，如果你有一个封闭解或者对上面的推理过程有其他任何的想法，欢迎发送邮件到我的邮箱<a href="&#109;&#x61;&#x69;&#x6c;&#x74;&#111;&#58;&#x73;&#104;&#x65;&#x6e;&#121;&#x75;&#104;&#101;&#x6c;&#x6c;&#x6f;&#64;&#49;&#54;&#x33;&#46;&#99;&#x6f;&#x6d;">&#x73;&#104;&#x65;&#x6e;&#121;&#x75;&#104;&#101;&#x6c;&#x6c;&#x6f;&#64;&#49;&#54;&#x33;&#46;&#99;&#x6f;&#x6d;</a>讨论。</p>
 
       
     </div>
@@ -377,6 +389,8 @@ $$
     <footer class="post-footer">
       
         <div class="post-tags">
+          
+            <a href="/tags/数学/" rel="tag">#数学</a>
           
             <a href="/tags/概率/" rel="tag">#概率</a>
           
@@ -469,7 +483,7 @@ $$
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
