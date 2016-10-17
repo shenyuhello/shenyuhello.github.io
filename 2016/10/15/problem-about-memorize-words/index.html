@@ -1,0 +1,638 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="概率," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="问题描述有一本英语单词书共包含3000个单词，每天随机从中选择50个不重复的单词来背（可能包含已经背过的单词），问按照这种背法平均情况下需要多少天才能把3000个单词全部背完？">
+<meta property="og:type" content="article">
+<meta property="og:title" content="背单词问题">
+<meta property="og:url" content="http://yoursite.com/2016/10/15/problem-about-memorize-words/index.html">
+<meta property="og:site_name" content="宁静以致远">
+<meta property="og:description" content="问题描述有一本英语单词书共包含3000个单词，每天随机从中选择50个不重复的单词来背（可能包含已经背过的单词），问按照这种背法平均情况下需要多少天才能把3000个单词全部背完？">
+<meta property="og:updated_time" content="2016-10-17T10:54:29.279Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="背单词问题">
+<meta name="twitter:description" content="问题描述有一本英语单词书共包含3000个单词，每天随机从中选择50个不重复的单词来背（可能包含已经背过的单词），问按照这种背法平均情况下需要多少天才能把3000个单词全部背完？">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 背单词问题 | 宁静以致远 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">宁静以致远</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                背单词问题
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-15T22:24:28+08:00" content="2016-10-15">
+              2016-10-15
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/数学/" itemprop="url" rel="index">
+                    <span itemprop="name">数学</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>有一本英语单词书共包含3000个单词，每天随机从中选择50个不重复的单词来背（可能包含已经背过的单词），问按照这种背法平均情况下需要多少天才能把3000个单词全部背完？</p>
+<a id="more"></a>
+<h2 id="基本思路"><a href="#基本思路" class="headerlink" title="基本思路"></a>基本思路</h2><p>如果每天选择的50个单词允许重复，则可以按照抓球模型来计算（抓球模型详见我另一篇文章“<a href="/2016/10/13/problem-about-grip-ball/">抓球问题</a>”），由于每天选择的50个单词不允许重复，这样就使问题变得不那么简单了。假设$X$为把3000单词背完所需要的天数，那么该问题就是要算$X$的期望$E(X)$，$X$范围可以从60到无穷大，直接算每个$X$对应的概率比较复杂，我们可以仿照抓球问题的办法将随机变量$X$进行分解后在计算期望。</p>
+<h2 id="详细过程"><a href="#详细过程" class="headerlink" title="详细过程"></a>详细过程</h2><p>为了解决这个问题，我们先给出如下定理。</p>
+<p><strong>定理一：设有三个随机变量$X、Y、Z$，其中</strong></p>
+<p>$$<br>X\in{x_1,x_2,…x_i},P(X=x_i)=p_i.\\<br>Y\in{y_1,y_2,…y_j},P(Y=y_i)=q_i.\\<br>Z \in{x_1,x_2,…x_i}\cup{ y_1,y_2,…y_j},P(Z=x_i)=wp_i,P(Z=y_j)=r q_j,w+r=1.<br>$$</p>
+<p><strong>那么$E(Z)=wE(X)+rE(Y)$</strong>.</p>
+<p>证明：</p>
+<p>因为<br>$$<br>\begin{align}<br>\sum_1^iw p_i+\sum_i^jrp_j&amp;=w\sum_1^i p_i+r\sum_i^jp_j\\<br>&amp;=w+r\\<br>&amp;=1<br>\end{align}<br>$$<br>所以<br>$$<br>\begin{align}<br>E(Z)&amp;=\sum_1^ix_iP(Z=x_i)+\sum_1^jy_iP(Z=y_i)\\<br>&amp;=\sum_1^iwx_ip_i+\sum_1^jry_jq_j\\<br>&amp;=w\sum_1^ix_ip_i+r\sum_1^jy_jp_j\\<br>&amp;=wE(X)+rE(Y)<br>\end{align}<br>$$</p>
+<p>证毕.</p>
+<p>这个定理给我们提供一个期望的方法，如果直接求随机变量$Z$的不太容易时，可将$Z$按照取值范围分成$X$和$Y$两个部分，而$Z$按照一定的概率取$X$的值或$Y$的值，那求$Z$的期望可归结为求$X$和$Y$的期望。以上结论还可推广到分成$N$个部分的情况,接下来就用这个定理来解决“背单词问题”。</p>
+<p><strong>定义：设有$n-i$个新词，$m+i$个旧词，每天从中随机选择$k$个单词来背$(0\le i\le\min(n,k))$，经过$X_i$天之后把所有的单词背完。</strong></p>
+<p>根据这个定义，$X_0$就是在有$n$个新词，$m$个旧词的情况下背完单词的天数；$X_1$就是在有$n-1$个新词，$m+1$个旧词的情况下背完单词的天数…，我们目的就是要求$E(X_0)$,直接求$E(X_0)$比较麻烦，但是我们可以利用$E(X_i)(0\lt i\le\min(n,k))$的结果来求得$E(X_0)$。</p>
+<p>在有$n$个新词，$m$个旧词,每天抽取$k$单词的情况下，第一天所抽取的新词数为T,则$\max(k-m,0)\le T\le \min(n,k)$,则$P(T=t)=\frac{C_n^tC<em>m^{k-t}}{C</em>{m+n}^{k}}$。那么第一天过后有$n-t$个新词，$m+t$个旧词,根据定义需要$X_t$天背完。设$X<em>t\in{x</em>{t1},x<em>{t2},…x</em>{ti}}$，则$X<em>t+1\in{x</em>{t1}+1,x<em>{t2}+1,…x</em>{ti}+1}$那么$P(X<em>0=x</em>{ti}+1)=P(T=t)P(X<em>t+1=x</em>{ti}+1)$(这里没有考虑各个$X_t$之间取值有可能重复，实际上是否重复并不影响我们计算期望),为了公式看起来比较简便令$a=max(k-m,0),b=min(n,k)$，利用定理一的结论可得</p>
+<p>$$<br>\begin{align}<br>E(X<em>0)&amp;=\sum</em>{t=a}^bP(T=t)E(X<em>t+1)\\<br>&amp;=\sum</em>{t=a}^bP(T=t)E(X<em>t)+P(T=t)\\<br>&amp;=\sum</em>{t=a}^bP(T=t)+\sum_{t=a}^bP(T=t)E(X<em>t)\\<br>&amp;=1+\sum</em>{t=a}^bP(T=t)E(X_t)<br>\end{align}<br>$$</p>
+<p>在给定$k$的情况下，注意到$E(X_t)$的值只与$n-t,m+t$有关，设$E(X_t)=f(n-t,m+t)$,所以$E(X_0)=f(n,m)$。可得如下递推公式</p>
+<p>$$<br>f(n,m)=1+\sum_{t=max(k-m,0)}^{min(n,k)}\frac{C_n^tC<em>m^{k-t}}{C</em>{m+n}^{k}}<br>f(n-t,m+t);(n\ne0)<br>$$</p>
+<p>很遗憾我无法给出一个封闭式，这就是最终的结论。接下来我们利用这个公式计算f(3000,0),注意到等式的右边也可能含有$f(n,m)$项，为了方便递归计算，将等式改写成如下形式</p>
+<p>$$<br>f(n,m) =<br>\begin{cases}<br>1+\sum_{t=k-m}^{min(n,k)}\frac{C_n^tC<em>m^{k-t}}{C</em>{m+n}^{k}}<br>f(n-t,m+t);k\gt m,n\ne0\\<br>\frac{1+\sum_{t=1}^{min(n,k)}\frac{C_n^tC<em>m^{k-t}}{C</em>{m+n}^{k}}<br>f(n-t,m+t)}{1-\frac{C<em>m^k}{C</em>{m+n}^{k}}};&amp; k\le m,n\ne0  \\<br>0;(n=0)\\<br>\end{cases}<br>$$</p>
+<h2 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h2><p>为了解决我们在最开始提出的问题，我们需要利用递推式来计算$f(3000,0)$，接下来我们用python语言来实现这个计算过程，计算代码如下。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># coding=utf-8</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment"># 计算连乘</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">facc</span><span class="params">(n, m)</span>:</span></div><div class="line">    prod = <span class="number">1</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n, m + <span class="number">1</span>):</div><div class="line">        prod *= i</div><div class="line">    <span class="keyword">return</span> prod</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment"># 计算组合数</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">C</span><span class="params">(n, m)</span>:</span></div><div class="line">    <span class="keyword">if</span> n == <span class="number">0</span> <span class="keyword">or</span> m == <span class="number">0</span>:</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span></div><div class="line">    <span class="keyword">return</span> facc(n - m + <span class="number">1</span>, n) / facc(<span class="number">1</span>, m)</div><div class="line"></div><div class="line"></div><div class="line">s = <span class="number">3000</span>  <span class="comment"># 总的单词数</span></div><div class="line">k = <span class="number">50</span>  <span class="comment"># 每天抽取的单词数</span></div><div class="line">record = [<span class="keyword">None</span>] * (s + <span class="number">1</span>)  <span class="comment"># 存储计算结果，record[n]存储f(n,m)的值</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment"># 运用自底而上的方法计算f(n,m)</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(n, m)</span>:</span></div><div class="line">    record[<span class="number">0</span>] = <span class="number">0</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n + m + <span class="number">1</span>):</div><div class="line">        j = n + m - i</div><div class="line">        <span class="comment"># 下面的过程相当于计算f(i,j)</span></div><div class="line">        <span class="keyword">if</span> k &gt; j:</div><div class="line">            record[i] = <span class="number">1</span></div><div class="line">            <span class="keyword">for</span> t <span class="keyword">in</span> range(k - j, min(i, k) + <span class="number">1</span>):</div><div class="line">                record[i] += <span class="number">1.0</span> * C(i, t) * C(j, k - t) / C(i + j, k) * record[i - t]</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            record[i] = <span class="number">1</span></div><div class="line">            <span class="keyword">for</span> t <span class="keyword">in</span> range(<span class="number">1</span>, min(i, k) + <span class="number">1</span>):</div><div class="line">                record[i] += <span class="number">1.0</span> * C(i, t) * C(j, k - t) / C(i + j, k) * record[i - t]</div><div class="line">            record[i] /= <span class="number">1</span> - <span class="number">1.0</span> * C(j, k) / C(i + j, k)</div><div class="line"></div><div class="line"></div><div class="line">f(s, <span class="number">0</span>)  <span class="comment"># 计算结果</span></div><div class="line"></div><div class="line"><span class="keyword">print</span> record[s]</div></pre></td></tr></table></figure>
+<p>由于在给定总单词数$s$的情况下,$m$的值可以由$n$的值确定，所以只需要一个一维数组存储中间结果。运行上述代码的输出为511.29694026,也就是说在总单词为3000个，每天随机50个背的情况下，大概需要511.29694026天背完。</p>
+<p>为了进一步判断我们的推理是否正确，我们来做一下仿真实验，也就是利用计算机来模拟一下背单词的过程，看看与我们的计算结果相差多远，仿真的代码如下。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># coding=utf-8</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">import</span> random</div><div class="line"></div><div class="line">s = <span class="number">3000</span>  <span class="comment"># 总单词数</span></div><div class="line">k = <span class="number">50</span>  <span class="comment"># 每天抽取的单词数</span></div><div class="line">random_num = range(<span class="number">0</span>, s)  <span class="comment"># 从中随机抽取单词</span></div><div class="line">times = <span class="number">100000</span>  <span class="comment"># 实验模拟次数</span></div><div class="line">acc_X = <span class="number">0</span>  <span class="comment"># 总共背单词的天数</span></div><div class="line">count_times = times  <span class="comment"># 还未完成的实验次数</span></div><div class="line"></div><div class="line"><span class="keyword">while</span> count_times &gt; <span class="number">0</span>:</div><div class="line">    word = [<span class="keyword">False</span>] * s  <span class="comment"># s个没有背过的单词</span></div><div class="line">    memory_word_count = <span class="number">0</span>  <span class="comment"># 背过的单词个数</span></div><div class="line">    X = <span class="number">0</span>  <span class="comment"># 天数</span></div><div class="line">    <span class="keyword">while</span> memory_word_count &lt; s:</div><div class="line">        memory_word_num = random.sample(random_num, k)</div><div class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> memory_word_num:</div><div class="line">            <span class="keyword">if</span> <span class="keyword">not</span> word[i]:</div><div class="line">                memory_word_count += <span class="number">1</span></div><div class="line">                word[i] = <span class="keyword">True</span></div><div class="line">        X += <span class="number">1</span></div><div class="line">    <span class="keyword">print</span> X</div><div class="line">    acc_X += X</div><div class="line">    count_times -= <span class="number">1</span></div><div class="line"></div><div class="line"><span class="keyword">print</span> acc_X * <span class="number">1.0</span> / times</div></pre></td></tr></table></figure>
+<p>上述代码在我的计算机上，某次的输出结果为511.74665，可以看出实验的结果和我们计算的结果是很接近的。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这个问题是我在写“<a href="/2016/10/13/problem-about-grip-ball/">抓球问题</a>”的一个扩展问题，最开始我也以为可以很简单的用抓球模型来解决，在进行深入思考之后，发现这个问题却并非如此容易，关键在于每天所抽取50个单词是不会重复的，这就大大增加了复杂性。我们在解决问题的时候是将原问题分解为多个小的子问题，然后将子问题的解合并得到原问题的解，类似于算法里面的“分治算法”的思想。上面的过程只得到了一个递推式，并没有得到一个封闭的解，如果你有一个封闭解或者对上面的推理过程有其他任何的想法，欢迎发送邮件到我的邮箱<a href="&#109;&#x61;&#105;&#108;&#116;&#111;&#x3a;&#x73;&#104;&#101;&#110;&#x79;&#117;&#104;&#x65;&#x6c;&#x6c;&#x6f;&#64;&#x31;&#x36;&#51;&#x2e;&#x63;&#111;&#109;">&#x73;&#104;&#101;&#110;&#x79;&#117;&#104;&#x65;&#x6c;&#x6c;&#x6f;&#64;&#x31;&#x36;&#51;&#x2e;&#x63;&#111;&#109;</a>讨论。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/概率/" rel="tag">#概率</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/14/phone-resistance-test/" rel="next" title="手机耐摔测试">
+                <i class="fa fa-chevron-left"></i> 手机耐摔测试
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="shenyu" />
+          <p class="site-author-name" itemprop="name">shenyu</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题描述"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本思路"><span class="nav-number">2.</span> <span class="nav-text">基本思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#详细过程"><span class="nav-number">3.</span> <span class="nav-text">详细过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验"><span class="nav-number">4.</span> <span class="nav-text">实验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">shenyu</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+
+</body>
+</html>
